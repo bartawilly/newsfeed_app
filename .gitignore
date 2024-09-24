@@ -5,9 +5,6 @@ __pycache__/
 
 # Virtual environment directory
 venv/
-env/
-ENV/
-venv.bak/
 
 # Distribution / packaging
 build/
@@ -23,10 +20,7 @@ htmlcov/
 .coverage
 .cache
 
-# Pytest cache
-.pytest_cache/
-
-# MySQL connection info (if stored separately)
+# config
 config.py
 
 # Environment variables
@@ -36,16 +30,10 @@ config.py
 .DS_Store
 Thumbs.db
 
-# Logs and databases
-*.log
-*.sqlite3
-
 # IDE-specific files
 .idea/
 .vscode/
-*.sublime-workspace
-*.sublime-project
 
-# Backup files
-*.bak
-*.swp
+# Logs and databases
+*.log
+*.sqlite3
