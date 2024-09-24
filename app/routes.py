@@ -2,6 +2,11 @@ from flask import request, jsonify
 from app import app
 from services.post_service import PostService
 
+# Root endpoint
+@app.route('/', methods=['GET'])
+def root():
+    return 'Welcome to Newsfeed APP'
+
 # Endpoint to add a new post
 @app.route('/posts', methods=['POST'])
 def add_post():
