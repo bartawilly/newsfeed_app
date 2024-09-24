@@ -1,11 +1,10 @@
 import mysql.connector
 from mysql.connector import Error
 from config import DB_CONFIG
-from typing import Optional, Dict
 
 class PostService:
     @staticmethod
-    def create_post(user_id: int, content: str) -> Optional[int]:
+    def create_post(user_id, content):
         try:
             connection = mysql.connector.connect(**DB_CONFIG)
             cursor = connection.cursor()
@@ -20,12 +19,12 @@ class PostService:
             print(f"Error creating post: {e}")
             return None
         finally:
-            if 'connection' in locals() and connection.is_connected():
+            if connection.is_connected():
                 cursor.close()
                 connection.close()
 
     @staticmethod
-    def get_post(post_id: int) -> Optional[Dict]:
+    def get_post(post_id):
         try:
             connection = mysql.connector.connect(**DB_CONFIG)
             cursor = connection.cursor(dictionary=True)
@@ -36,12 +35,12 @@ class PostService:
             print(f"Error fetching post: {e}")
             return None
         finally:
-            if 'connection' in locals() and connection.is_connected():
+            if connection.is_connected():
                 cursor.close()
                 connection.close()
 
     @staticmethod
-    def update_post(post_id: int, content: str) -> bool:
+    def update_post(post_id, content):
         try:
             connection = mysql.connector.connect(**DB_CONFIG)
             cursor = connection.cursor()
@@ -55,12 +54,12 @@ class PostService:
             print(f"Error updating post: {e}")
             return False
         finally:
-            if 'connection' in locals() and connection.is_connected():
+            if connection.is_connected():
                 cursor.close()
                 connection.close()
 
     @staticmethod
-    def delete_post(post_id: int) -> bool:
+    def delete_post(post_id):
         try:
             connection = mysql.connector.connect(**DB_CONFIG)
             cursor = connection.cursor()
@@ -72,6 +71,6 @@ class PostService:
             print(f"Error deleting post: {e}")
             return False
         finally:
-            if 'connection' in locals() and connection.is_connected():
+            if connection.is_connected():
                 cursor.close()
                 connection.close()
