@@ -1,7 +1,7 @@
 
 DB_CONFIG = {
     'host': 'localhost',
-    'database': 'newsfeed_db',
+    'database': 'newsfeed',
     'user': 'your_username',
     'password': 'your_password'
 }
